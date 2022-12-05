@@ -23,3 +23,38 @@ isort = "^5.10.1"
 [build-system]
 requires = ["poetry>=1.2.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+# 以下linter formatterの設定
+[tool.flake8]
+# blackとあわせてください
+max-line-length = 120
+max-complexity = 10
+# 無視する場合は、エラーや警告ががある場合は、下記のように設定してください
+# ignore = "W503,W504"
+
+[tool.mypy]
+# mypy.ini と少し書き方が違うことに注意してください
+# https://mypy.readthedocs.io/en/stable/config_file.html
+python_version = "3.10"
+ignore_missing_imports = true
+# インストールしたライブラリ自体でエラーに引っかかる事があるためです。
+exclude = [
+    "venv/*",
+    '\.venv/*',
+]
+
+[tool.black]
+target-version = ["py310"]
+# 1行の長さはこれに合わせてください。
+line-length = 120
+
+[tool.isort]
+# blackとあわせてください
+line_length = 120
+# blackと競合しない設定 https://pycqa.github.io/isort/docs/configuration/multi_line_output_modes.html
+multi_line_output = 3
+# blackと競合しないように許容
+ensure_newline_before_comments = true
+use_parentheses = true
+
