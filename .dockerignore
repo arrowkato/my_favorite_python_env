@@ -1,0 +1,7 @@
+.DS_store
+
+.python-version
+.mypy_cache/*
+.venv/*
+
+.act_secrets.env

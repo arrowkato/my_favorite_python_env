@@ -223,3 +223,6 @@ poetry.toml
 
 # pyenv config file
 .python-version
+
+# act https://github.com/nektos/act
+.act_secrets.env
