@@ -1,3 +1,17 @@
 {
+    // 保存時にformatterを適用
+    "editor.formatOnSave": true,
+    // 末尾改行を自動で追加
     "files.insertFinalNewline": true,
+    // flake8 を使用
+    "python.linting.flake8Enabled": true,
+    // mypy を使用
+    "python.linting.mypyEnabled": true,
+    // formatter には black を使用　
+    "python.formatting.provider": "black",
+    // isort を適用するための設定
+    "isort.check": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
 }
