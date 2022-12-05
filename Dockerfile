@@ -25,7 +25,7 @@ RUN apt-get update \
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
     libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev ca-certificates \
     # git 関連
-    git ssh \
+    git ssh git-secrets \
     # よく使うツール
     vim less zip jq sudo \
     && apt-get clean \
