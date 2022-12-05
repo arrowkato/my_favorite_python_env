@@ -1,0 +1,24 @@
+name: apply linters
+
+on:
+  push:
+    paths:
+      - "**/*.py"
+      - ".github/workflows/lint.yml"
+
+jobs:
+  apply_linters:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: docker pull
+        run: docker pull arrowkato/my_favorite_python_env:latest
+      - name: run flake8
+        run: docker-compose run --my_favorite_python_env /bin/bash -c ". ~/.bash_profile && poetry run flake8 $(git ls-files "*.py")"
+      - name: run mypy
+        run: docker-compose run --my_favorite_python_env /bin/bash -c ". ~/.bash_profile && poetry run mypy."
+      - name: run black
+        run: docker-compose run --my_favorite_python_env /bin/bash -c ". ~/.bash_profile && poetry run black $(git ls-files "*.py") --check"
+      - name: run isort
+        run: docker-compose run --my_favorite_python_env /bin/bash -c ". ~/.bash_profile && poetry run flake8 $(git ls-files "*.py") --check"
