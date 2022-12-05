@@ -1,0 +1,18 @@
+# 開発用コンテナ
+version: "3.8"
+services:
+  my_favorite_python_env:
+    # dev, stg, prd 環境にデプロイすることを考えると、ビルドしたコンテナイメージを
+    # Docker Hub, GitHub Container Registry, ECR 等に登録するのがよくある運用ですが
+    # 一旦はローカルのDockerfileを直接ビルドする形式にしています。
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_favorite_python_env
+    restart: "no"
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    tty: true
+    stdin_open: true
