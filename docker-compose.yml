@@ -2,8 +2,7 @@
 version: "3.8"
 services:
   my_favorite_python_env:
-    build:
-      image: arrowkato/my_favorite_python_env:latest
+    image: arrowkato/my_favorite_python_env:latest
     container_name: my_favorite_python_env
     restart: "no"
     volumes:
@@ -12,3 +11,4 @@ services:
         target: /app
     tty: true
     stdin_open: true
+    user: 1001:999 # ubuntu:ubuntu
