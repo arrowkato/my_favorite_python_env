@@ -55,11 +55,3 @@ RUN curl https://pyenv.run | bash \
 
 
 WORKDIR /app
-
-COPY pyproject.toml /app
-COPY poetry.lock /app
-
-# poetry install
-RUN . $HOME/.bash_profile \
-    && poetry install --no-root \
-    && rm -f /app/pyproject.toml /app/poetry.lock
