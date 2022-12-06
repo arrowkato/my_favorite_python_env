@@ -45,12 +45,13 @@ ENV PYTHON_VERSION=3.10.8 \
     POETRY_VIRTUALENVS_IN_PROJECT=1
 RUN curl https://pyenv.run | bash \
     # pyenv をインストールした直後に PATH を通さないと落ちる
-    && . ~/.bash_profile \
+    && . $HOME/.bash_profile \
     && pyenv install $PYTHON_VERSION \
     && pyenv global $PYTHON_VERSION \
     && pyenv rehash \
     # install poetry
     && curl -sSL https://install.python-poetry.org | python - \
     && rm -rf $HOME/.cache
+
 
 WORKDIR /app
