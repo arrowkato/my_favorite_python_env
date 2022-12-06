@@ -9,21 +9,23 @@ on:
 jobs:
   apply_linters:
     runs-on: ubuntu-22.04
+    container:
+      image: arrowkato/my_favorite_python_env:latest
+      volumes:
+        - $GITHUB_WORKSPACE:/app
     permissions:
       contents: "read"
       id-token: "write"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: docker pull
-        run: docker pull arrowkato/my_favorite_python_env:latest
       - name: poetry install
-        run: docker compose run --rm my_favorite_python_env /home/ubuntu/.local/bin/poetry install --no-root
+        run: . ~/.bash_profile && poetry install --no-root
       - name: run flake8
-        run: docker compose run --rm my_favorite_python_env /home/ubuntu/.local/bin/poetry run flake8 $(git ls-files "*.py")
+        run: . ~/.bash_profile && poetry run flake8 $(git ls-files "*.py")
       - name: run mypy
-        run: docker compose run --rm my_favorite_python_env /home/ubuntu/.local/bin/poetry run mypy .
+        run: . ~/.bash_profile && poetry run mypy .
       - name: run black
-        run: docker compose run --rm my_favorite_python_env /home/ubuntu/.local/bin/poetry run black $(git ls-files "*.py") --check
+        run: . ~/.bash_profile && poetry run black $(git ls-files "*.py") --check
       - name: run isort
-        run: docker compose run --rm my_favorite_python_env /home/ubuntu/.local/bin/poetry run isort $(git ls-files "*.py") --check
+        run: . ~/.bash_profile && poetry run isort $(git ls-files "*.py") --check
