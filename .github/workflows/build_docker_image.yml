@@ -1,11 +1,12 @@
 name: build_docker_image
 
 on:
+  # main ブランチのDockerfileが更新されたとき
   push:
-    # branches:
-    #   - "main"
-    # paths:
-    #   - "Dockerfile"
+    branches:
+      - "main"
+    paths:
+      - "Dockerfile"
   workflow_dispatch:
 
 
