@@ -1,4 +1,4 @@
 # see. https://github.com/nektos/act#runners
 # .github/workflows 配下のyaml で ubuntu22.04 を指定しているので、
 #" ubunrtu22.04になるものから適当に選択
--P catthehacker/ubuntu:act-22.04
+-P ubuntu-22.04=catthehacker/ubuntu:act-22.04
