@@ -31,4 +31,4 @@ jobs:
           push: true
           tags: |
             arrowkato/my_favarite_python_env:latest
-            arrowkato/my_favarite_python_env:${{ GITHUB_SHA }}
+            arrowkato/my_favarite_python_env:$GITHUB_SHA
