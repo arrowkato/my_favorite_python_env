@@ -6,13 +6,16 @@ description = "僕の好きなPython開発環境"
 authors = ["arrowkato"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "my_favorite_python_env"}]
 
 [tool.poetry.dependencies]
 # "^3.10.8" は ">=3.10.8, <4.0.0" と同じ意味です。
 # ref https://python-poetry.org/docs/dependency-specification/#version-constraints
 python = "^3.10.8"
 numpy = "^1.23.5"
+
+# 複数リポジトリに分割して、共通機能を arrowkato/my_private_repo リポジトリに集約して読み込んで利用する想定です。
+# arrowkato/my_private_repo 自体は、poetryのセットアップをして適当にpyyamlをインストールしただけのリポジトリです。
+my_private_repo = {git = "ssh://git@github.com/arrowkato/my_private_repo.git"}
 
 [tool.poetry.group.dev.dependencies]
 pyproject-flake8 = "^6.0.0"
