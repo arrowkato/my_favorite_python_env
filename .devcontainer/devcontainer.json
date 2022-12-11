@@ -1,10 +1,10 @@
 {
     "name": "Python Project",
-    // Remote Container でのコンテナ名
+    // Dev Container でのコンテナ名
     "service": "my_favorite_python_env",
     "dockerComposeFile": "../docker-compose.yml",
     "workspaceFolder": "/app",
-    // Remote Container使用時のコンテナ内でVS Codeにインストールする拡張機能
+    // Dev Container使用時のコンテナ内でVS Codeにインストールする拡張機能
     "extensions": [
         "ms-python.python", // 何はなくともVS Code公式のpython拡張機能
         "oderwat.indent-rainbow", // indentを見やすく
