@@ -8,7 +8,7 @@ git clone https://github.com/arrowkato/my_favorite_python_env.git
 
 対象読者
 - 他のサーバーサイド言語での実装経験はあるものの、Python では、初めて開発環境を作るエンジニア
-- 人が作った開発環境上で、Python のコード自体はかけるものの、自分でも DevOps 周りにも領域を広げたいエンジニア
+- 人が作った開発環境上で、Python のコード自体はかけるものの、DevOps 周りにも領域を広げたいエンジニア
 
 全体的に奇をてらわず、類似のサービス、ライブラリの中では、シェアのなるべく多いものを選んでいます。
 結果的に、経験のあるエンジニアからすれば、どこかで見た構成になっていると思います。
@@ -24,6 +24,7 @@ CD周りも書いていないです。
 - [ディレクトリ構成](./doc/directory_configuration.md)
 - [パッケージマネージャー](./doc/package_manager.md)
 - [linterとformatter](./doc/linter_formatter.md)
-- [エディター](./doc/editor.md) 参照です。
+- [エディター](./doc/editor.md)
 - [CI tool](./doc/CI_tool.md)
-- testing frame work. いずれ書きます。pytest 派です。
+- testing framework. いずれ書きます。pytest 派です。
+- Dependabot もいずれ各予定です。ただ、[設定ファイル](.github/dependabot.yml)でほぼ語り尽くされている感がありますが。
