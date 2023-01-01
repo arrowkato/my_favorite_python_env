@@ -26,5 +26,5 @@ CD周りも書いていないです。
 - [linterとformatter](./doc/linter_formatter.md)
 - [エディター](./doc/editor.md)
 - [CI tool](./doc/CI_tool.md)
+- [継続的なライブラリのバージョンアップ: Dependabot](./doc/dependabot_setting.md)
 - testing framework. いずれ書きます。pytest 派です。
-- Dependabot もいずれ各予定です。ただ、[設定ファイル](.github/dependabot.yml)でほぼ語り尽くされている感がありますが。
