@@ -19,7 +19,7 @@ my_private_repo = {git = "ssh://git@github.com/arrowkato/my_private_repo.git"}
 
 [tool.poetry.group.dev.dependencies]
 pyproject-flake8 = "^7.0.0"
-mypy = "^1.12"
+mypy = "^1.13"
 black = "^24.10.0"
 isort = "^5.13.2"
 
